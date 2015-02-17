@@ -1,0 +1,53 @@
+<mapping>
+  <class name="com.softzone.stoner.state.Item" identity="itemId">
+    <map-to table="itemTable" />
+    <field name="itemId" type="int">
+      <sql name="item_id" type="integer" />
+    </field>
+    <field name="name" type="string">
+      <sql name="name" type="varchar" />
+    </field>
+    <field name="supplier" type="string">
+      <sql name="supplier" type="varchar" />
+    </field>
+    <field name="type" type="string">
+      <sql name="type" type="varchar" />
+    </field>
+    <field name="location" type="string">
+      <sql name="location" type="varchar" />
+    </field>
+
+    <field name="pic" type="string">
+      <sql name="imagename" type="varchar" />
+    </field>
+    <field name="description" type="string">
+      <sql name="description" type="varchar" />
+    </field>
+    <field name="amount" type="int">
+      <sql name="amount" type="integer" />
+    </field>
+    <field name="prize" type="double">
+      <sql name="prize" type="double" />
+    </field>
+
+  </class>
+  
+  
+  
+  <class name="com.softzone.stoner.login.User" identity="userName">
+    <map-to table="addUserTable" />
+    <field name="userName" type="string">
+      <sql name="username" type="varchar" />
+    </field>
+    <field name="password" type="string">
+      <sql name="password" type="varchar" />
+    </field>
+    <field name="authority" type="string">
+      <sql name="authority" type="varchar" />
+    </field>
+  </class>
+  
+  
+  
+  
+</mapping>

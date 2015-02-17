@@ -1,0 +1,67 @@
+package com.softzone.stoner.login;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.transaction.UserTransaction;
+
+import org.exolab.castor.jdo.Database;
+import org.exolab.castor.jdo.JDOManager;
+import org.exolab.castor.jdo.PersistenceException;
+
+import java.sql.*;
+
+public class UserList extends JFrame {
+
+	private static final int FRAME_WIDTH = 450;
+	private static final int FRAME_HEIGHT = 300;
+	private static final int X_ORIGIN = 250;
+	private static final int Y_ORIGIN = 200;
+
+	private Container contentPane;
+
+	private Connection connection;
+
+	private JPanel userPanel;
+
+	public UserList() {
+
+	}
+
+	public void buildWindow() {
+
+		contentPane = getContentPane();
+		getContentPane().setLayout(new BorderLayout(0, 0));
+
+		setSize(FRAME_WIDTH, FRAME_HEIGHT);
+		setLocation(X_ORIGIN, Y_ORIGIN);
+		setTitle("LoginSystem");
+		setResizable(false);
+
+		userPanel = new UserListPanel();
+
+		contentPane.add(userPanel, BorderLayout.CENTER);
+		setVisible(true);
+
+	}
+
+}
